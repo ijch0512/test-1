@@ -10,7 +10,13 @@
  *      */
 #define likely(x)       __builtin_expect((x),1)
 #define unlikely(x)     __builtin_expect((x),0)
-
+/*
+ * builtin_expect(조건문, 1)
+ * --> 조건문이 대부분 참일거라고 컴파일러에게 알려줘서
+ *  효율적인 컴파일할 수 있게 하는 함수
+ *  builtin_expect(조건문, 0)
+ *  --> 조건문이 대부분 거짓일거라고 컴파일러에게 알려줘서
+ *  효율적인 컴파일할 수 있게 하는 함수*/
 int main(void)
 {
 	const int x = 3;
